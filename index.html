@@ -5,12 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-    <p>
-        Hello, World!
-    </p>
-    <img src="img/london.jpg" alt="">
-    
+
+    <div class="container" id="app">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Language</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </header>
+        <div style="margin-top: 20px;">
+
+            <div class="row">
+                <div class="col-md-3" v-for="row in  shops">
+                  <div class="card" style="margin-bottom:20px;">
+                    <img :src="'img/'+row.pic" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{row.name}}</h5>
+                      <p class="card-text">{{row.descript}}</p>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+           
+        </div>
+        <footer>
+
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                 shops:[
+                     { name: "shop1", descript : "xxx", pic:"pic1.jpg"},
+                     { name: "shop2", descript : "xxx", pic:"pic2.jpg"},
+                     { name: "shop3", descript : "xxx", pic:"pic3.jpg"},
+                     { name: "shop4", descript : "xxx", pic:"pic4.jpg"},
+                     { name: "shop5", descript : "xxx", pic:"pic5.jpg"},
+                     { name: "shop6", descript : "xxx", pic:"pic6.jpg"},
+                     { name: "shop7", descript : "xxx", pic:"pic7.jpg"},
+                     { name: "shop8", descript : "xxx", pic:"pic8.jpg"}
+                 ]
+                }
+            ,
+            methods:{
+
+            }
+        });
+        
+
+    </script>
+
 </body>
 </html>
